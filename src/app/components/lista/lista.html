@@ -4,22 +4,25 @@
   <span class="badge">124 Contacts</span>
 </div>
 
-<div class="search">
+<div class="pesquisa">
 
   <input placeholder="Search contacts..." />
 </div>
 
-<div class="contact-card">
+<div class="contact-list">
+<div class="contact-card" *ngFor="let contact of contact">
   <div class="info">
     <div class="avatar"></div>
     <div>
-      <h3>NOME</h3>
-      <p>TEL</p>
+      <h3>{{ contact.nome }}</h3>
+      <p>{{ contact.telefone }}</p>
+      <p>{{ contact.email }}</p>
     </div>
   </div>
 
   <div class="actions">
-    <span class="tag">CARGO</span>
+    <span class="tag">{{ contact.cargo }}</span>
     <button mat-icon-button></button>
   </div>
+</div>
 </div>

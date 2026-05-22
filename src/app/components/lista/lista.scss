@@ -11,7 +11,7 @@
   font-size: 12px;
 }
 
-.search {
+.pesquisa {
   background: white;
   border-radius: 30px;
   padding: 14px 20px;
@@ -20,7 +20,7 @@
   margin: 30px 0;
 }
 
-.search input {
+.pesquisa input {
   border: none;
   outline: none;
   background: transparent;
@@ -36,6 +36,23 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+}
+
+.contact-list {
+  max-height: 410px;
+  flex: 1;
+  overflow-y: auto;
+
+  /* Firefox */
+  scrollbar-width: none;
+
+  /* IE e Edge antigo */
+  -ms-overflow-style: none;
+}
+
+/* Chrome, Edge e Safari */
+.contact-list::-webkit-scrollbar {
+  display: none;
 }
 
 .info {

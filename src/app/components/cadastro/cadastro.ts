@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
 })
 export class Cadastro {
 
-  buttonText: string = 'Clique Aqui para se cadastrar';
+  buttonText: string = 'Cadastrar';
 }
