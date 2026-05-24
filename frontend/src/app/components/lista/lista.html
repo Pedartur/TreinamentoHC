@@ -10,19 +10,22 @@
 </div>
 
 <div class="contact-list">
-<div class="contact-card" *ngFor="let contact of contact">
-  <div class="info">
-    <div class="avatar"></div>
-    <div>
-      <h3>{{ contact.nome }}</h3>
-      <p>{{ contact.telefone }}</p>
-      <p>{{ contact.email }}</p>
+  <div class="contact-card" *ngFor="let contact of contact">
+    <div class="info">
+      <div class="avatar"></div>
+      <div>
+        <h3>{{ contact.nome }}</h3>
+        <p>{{ contact.telefone }}</p>
+        <p>{{ contact.email }}</p>
+      </div>
+    </div>
+
+    <div class="actions">
+      <span class="tag">{{ contact.cargo }}</span>
+      <button mat-icon-button></button>
+      <a mat-icon-button [href]="'https://wa.me/' + contact.telefone" target="_blank">
+        zapzap
+      </a>
     </div>
   </div>
-
-  <div class="actions">
-    <span class="tag">{{ contact.cargo }}</span>
-    <button mat-icon-button></button>
-  </div>
-</div>
 </div>

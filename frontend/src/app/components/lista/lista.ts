@@ -1,19 +1,23 @@
 import { Component } from '@angular/core';
-import { Contact } from '../../models/contact';
+import { Contato } from '../../models/contato';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-lista',
-  standalone: false,
+  standalone: true,
+  imports: [
+    CommonModule
+  ],
   templateUrl: './lista.html',
   styleUrl: './lista.scss',
 })
 export class Lista {
-  contact: Contact[] = [
+  contact: Contato[] = [
     {
       id: 1,
       nome: 'Pedro Freitas',
       email: 'pedro@example.com',
-      telefone: '(31) 0000-1234',
+      telefone: '(31) 997773933',
       cargo: 'Software Engineer',
     },
 
@@ -21,14 +25,14 @@ export class Lista {
       id: 2,
       nome: 'Maria Silva',
       email: 'maria@example.com',
-      telefone: '(31) 0000-5678',
+      telefone: '31997773933',
       cargo: 'Product Manager',
     },
     {
       id: 3,
       nome: 'João Santos',
       email: 'joao@example.com',
-      telefone: '(31) 0000-9012',
+      telefone: '3197773933',
       cargo: 'Designer',
     },
 
@@ -36,7 +40,7 @@ export class Lista {
       id: 4,
       nome: 'Ana Oliveira',
       email: 'ana@example.com',
-      telefone: '(31) 0000-3456',
+      telefone: '553197773933',
       cargo: 'Marketing Specialist',
     },
 
@@ -44,7 +48,7 @@ export class Lista {
       id: 5,
       nome: 'Carlos Pereira',
       email: 'carlos@example.com',
-      telefone: '(31) 0000-7890',
+      telefone: '5531997773933',
       cargo: 'Sales Associate',
     }
   ];

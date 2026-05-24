@@ -13,7 +13,7 @@ builder.Logging.AddConsole();
 
 // Adicionar DbContext ao container de DI
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Configuração centralizada via IOptions<T>
 builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSettings"));
