@@ -1,55 +1,61 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Contato } from '../../models/contato';
 import { CommonModule } from '@angular/common';
+import { ContatoService } from '../../services/contato-service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-lista',
   standalone: true,
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   templateUrl: './lista.html',
   styleUrl: './lista.scss',
 })
-export class Lista {
-  contact: Contato[] = [
-    {
-      id: 1,
-      nome: 'Pedro Freitas',
-      email: 'pedro@example.com',
-      telefone: '(31) 997773933',
-      cargo: 'Software Engineer',
-    },
+export class Lista implements OnInit {
+  todosContatos: Contato[] = [];
+  contatosFiltrados: Contato[] = [];
+  
+  constructor(private readonly contatoService: ContatoService, private readonly cdr: ChangeDetectorRef) {}
 
-    {
-      id: 2,
-      nome: 'Maria Silva',
-      email: 'maria@example.com',
-      telefone: '31997773933',
-      cargo: 'Product Manager',
-    },
-    {
-      id: 3,
-      nome: 'João Santos',
-      email: 'joao@example.com',
-      telefone: '3197773933',
-      cargo: 'Designer',
-    },
+  termoBusca: string = '';
 
-    {
-      id: 4,
-      nome: 'Ana Oliveira',
-      email: 'ana@example.com',
-      telefone: '553197773933',
-      cargo: 'Marketing Specialist',
-    },
+  ngOnInit(): void {
+    this.getAll();
+  }
 
-    {
-      id: 5,
-      nome: 'Carlos Pereira',
-      email: 'carlos@example.com',
-      telefone: '5531997773933',
-      cargo: 'Sales Associate',
+  getAll(): void{
+    this.contatoService.getAll().subscribe({
+      next: (resultado) => {
+        this.todosContatos = resultado;
+        this.contatosFiltrados = this.todosContatos;
+        this.termoBusca = '';
+
+        this.cdr.detectChanges();
+      },
+      error: (erro) => {
+        console.error('Erro ao buscar os contatos:', erro);
+      }
+    });
+  }
+
+  filtrarContatos(): void {
+    if (!this.termoBusca.trim()) {
+      this.contatosFiltrados = this.todosContatos;
+      return;
     }
-  ];
+
+    const termo = this.termoBusca.toLowerCase();
+
+    this.contatosFiltrados = this.todosContatos.filter(contato => {
+      return contato.nome.toLowerCase().includes(termo) || 
+             contato.cargo.toLowerCase().includes(termo) ||
+             contato.email.toLowerCase().includes(termo);
+    });
+
+    this.cdr.detectChanges();
+  }
 }

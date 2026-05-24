@@ -5,25 +5,24 @@
 </div>
 
 <div class="pesquisa">
-
-  <input placeholder="Search contacts..." />
+  <input placeholder="Search contacts..." name="termoBusca" [(ngModel)]="termoBusca" (input)="filtrarContatos()" />
 </div>
 
 <div class="contact-list">
-  <div class="contact-card" *ngFor="let contact of contact">
+  <div class="contact-card" *ngFor="let contato of contatosFiltrados">
     <div class="info">
       <div class="avatar"></div>
       <div>
-        <h3>{{ contact.nome }}</h3>
-        <p>{{ contact.telefone }}</p>
-        <p>{{ contact.email }}</p>
+        <h3>{{ contato.nome }}</h3>
+        <p>{{ contato.telefone }}</p>
+        <p>{{ contato.email }}</p>
       </div>
     </div>
 
     <div class="actions">
-      <span class="tag">{{ contact.cargo }}</span>
+      <span class="tag">{{ contato.cargo }}</span>
       <button mat-icon-button></button>
-      <a mat-icon-button [href]="'https://wa.me/' + contact.telefone" target="_blank">
+      <a mat-icon-button [href]="'https://wa.me/' + contato.telefone" target="_blank">
         zapzap
       </a>
     </div>

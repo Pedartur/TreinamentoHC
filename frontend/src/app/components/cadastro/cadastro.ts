@@ -1,5 +1,4 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Contato } from '../../models/contato';
 import { ContatoService} from '../../services/contato-service';
 import { CommonModule } from '@angular/common';
@@ -19,7 +18,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 export class Cadastro {
 
-  constructor(private readonly http: HttpClient, private readonly contatoService: ContatoService, private readonly cdr: ChangeDetectorRef) {}
+  constructor(private readonly contatoService: ContatoService, private readonly cdr: ChangeDetectorRef) {}
 
   novoContato: Contato = {
     id: -1,
