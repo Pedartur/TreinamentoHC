@@ -1,0 +1,16 @@
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100vh;
+    width: 100%;
+}
+
+.cadastro{
+    background-color: #ffffff;
+    padding: 10px 40px 60px 60px;
+}
+
+.lista{
+    background-color: #26cf80;
+    padding: 40px;
+}   
