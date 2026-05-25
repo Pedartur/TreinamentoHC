@@ -1,8 +1,9 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Contato } from '../../models/contato';
-import { CommonModule } from '@angular/common';
+import { CommonModule} from '@angular/common';
 import { ContatoService } from '../../services/contato-service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-lista',
@@ -10,10 +11,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatIconModule,
   ],
   templateUrl: './lista.html',
-  styleUrl: './lista.scss',
+  styleUrls: ['./lista.scss'],
 })
 export class Lista implements OnInit {
   todosContatos: Contato[] = [];

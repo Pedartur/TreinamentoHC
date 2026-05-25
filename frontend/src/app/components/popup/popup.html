@@ -1,0 +1,14 @@
+<div class="contact-card" *ngFor="let contato of DadoContato">
+    <div class="info">
+      <div class="avatar"></div>
+      <div>
+        <input class="input-ctt" placeholder="{{ contato.nome }}"/>
+        <input class="input-ctt" placeholder="{{ contato.telefone }}"/>
+        <input class="input-ctt" placeholder="{{ contato.email }}"/>
+        <input class="input-ctt" placeholder="{{ contato.cargo }}"/>
+      </div>
+    </div>
+    <br />
+    <button class="SalveCtt" type="submit">Salvar</button>
+    <button class="Delete" type="delete">Deletar</button>
+  </div>

@@ -5,7 +5,12 @@
 </div>
 
 <div class="pesquisa">
-  <input placeholder="Search contacts..." name="termoBusca" [(ngModel)]="termoBusca" (input)="filtrarContatos()" />
+  <input
+    placeholder="Search contacts..."
+    name="termoBusca"
+    [(ngModel)]="termoBusca"
+    (input)="filtrarContatos()"
+  />
 </div>
 
 <div class="contact-list">
@@ -22,8 +27,14 @@
     <div class="actions">
       <span class="tag">{{ contato.cargo }}</span>
       <button mat-icon-button></button>
-      <a mat-icon-button [href]="'https://wa.me/' + contato.telefone" target="_blank">
-        zapzap
+      <a
+        mat-raised-button
+        [href]="'https://wa.me/' + contato.telefone"
+        target="_blank"
+        class="whatsapp-btn"
+      >
+        <mat-icon>chat</mat-icon>
+        WhatsApp
       </a>
     </div>
   </div>
