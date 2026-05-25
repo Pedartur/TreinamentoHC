@@ -1,20 +1,43 @@
 <div class="form-div1">
+  <div class="popup">
+    <h1>Editar</h1>
+    <a class="Cancel" (click)="fecharPopup()" type="button">X</a>
+  </div>
 
-<h1>Editar</h1>
-
-<div class="form-div2">
- <form #form>
-    <input class="input-ctt" placeholder="{{contato.nome}}" [(ngModel)]="contato.nome"/>
-    <br />
-    <input class="input-ctt" placeholder="{{contato.telefone}}" mask="(00) 90000-0000" [(ngModel)]="contato.telefone"/> 
-    <br />
-    <input class="input-ctt" placeholder="{{contato.email}}" type="email" [(ngModel)]="contato.email"/>
-    <br />
-    <input class="input-ctt" placeholder="{{contato.cargo}}" [(ngModel)]="contato.cargo"/>
-    <br />
-    <button class="SavePopup" (click)="editarContato()" type="submit">Salvar</button>
-    <button class="Delete" (click)="delete()" type="delete">Deletar</button>
- </form>
-</div>
-
+  <div class="form-div2">
+    <form #form>
+      <input
+        class="input-ctt"
+        name="nome"
+        placeholder="{{ contato.nome }}"
+        [(ngModel)]="contato.nome"
+      />
+      <br />
+      <input
+        class="input-ctt"
+        name="telefone"
+        placeholder="{{ contato.telefone }}"
+        mask="(00) 90000-0000"
+        [(ngModel)]="contato.telefone"
+      />
+      <br />
+      <input
+        class="input-ctt"
+        name="email"
+        placeholder="{{ contato.email }}"
+        type="email"
+        [(ngModel)]="contato.email"
+      />
+      <br />
+      <input
+        class="input-ctt"
+        name="cargo"
+        placeholder="{{ contato.cargo }}"
+        [(ngModel)]="contato.cargo"
+      />
+      <br />
+      <button class="SavePopup" (click)="editarContato()" type="submit">Salvar</button>
+      <button class="Delete" (click)="delete()" type="delete">Deletar</button>
+    </form>
+  </div>
 </div>

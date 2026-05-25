@@ -1,5 +1,13 @@
 .form-div1{
     width: 80%;
+    padding: 12px 30px;
+}
+
+.popup{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .form-div2{
@@ -24,6 +32,19 @@
     border: none;
     font-size: 18px;
     margin-left: 10px;
+}
+
+.Cancel{
+  width: 45px;
+  height: 45px;
+  border-radius: 40px;
+  background: #ff644f;
+  font-size: 28px;
+  cursor: pointer;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .input-ctt{

@@ -1,12 +1,12 @@
 <div class="header">
   <h2>Contatos</h2>
 
-  <span class="badge">{{ todosContatos.length }} Contacts</span>
+  <span class="badge">{{ todosContatos.length }} Contatos</span>
 </div>
 
 <div class="pesquisa">
   <input
-    placeholder="Search contacts..."
+    placeholder="Buscar contatos..."
     name="termoBusca"
     [(ngModel)]="termoBusca"
     (input)="filtrarContatos()"
@@ -28,15 +28,10 @@
 
     <div class="actions">
       <span class="tag">{{ contato.cargo }}</span>
-      <a
-        mat-raised-button
-        (click)="abrirPopup(contato.id)"
-        title="Editar"
-        class="edit-btn"
-      >
-        <mat-icon>edit</mat-icon> 
+      <a mat-raised-button (click)="abrirPopup(contato.id)" title="Editar" class="edit-btn">
+        <mat-icon>edit</mat-icon>
         Editar
-        </a>
+      </a>
       <a
         mat-raised-button
         [href]="'https://wa.me/' + contato.telefone"
