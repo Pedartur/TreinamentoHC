@@ -10,7 +10,7 @@ import { Lista } from './components/lista/lista';
 import { Popup } from './components/popup/popup';
 
 @NgModule({
-  declarations: [App, Popup],
+  declarations: [App],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -19,6 +19,7 @@ import { Popup } from './components/popup/popup';
     FormsModule,
     Cadastro,
     Lista,
+    Popup
   ],
   providers: [provideBrowserGlobalErrorListeners(), provideNgxMask()],
   bootstrap: [App],

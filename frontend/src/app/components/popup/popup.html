@@ -1,14 +1,20 @@
-<div class="contact-card" *ngFor="let contato of DadoContato">
-    <div class="info">
-      <div class="avatar"></div>
-      <div>
-        <input class="input-ctt" placeholder="{{ contato.nome }}"/>
-        <input class="input-ctt" placeholder="{{ contato.telefone }}"/>
-        <input class="input-ctt" placeholder="{{ contato.email }}"/>
-        <input class="input-ctt" placeholder="{{ contato.cargo }}"/>
-      </div>
-    </div>
+<div class="form-div1">
+
+<h1>Editar</h1>
+
+<div class="form-div2">
+ <form #form>
+    <input class="input-ctt" placeholder="{{contato.nome}}" [(ngModel)]="contato.nome"/>
     <br />
-    <button class="SalveCtt" type="submit">Salvar</button>
-    <button class="Delete" type="delete">Deletar</button>
-  </div>
+    <input class="input-ctt" placeholder="{{contato.telefone}}" mask="(00) 90000-0000" [(ngModel)]="contato.telefone"/> 
+    <br />
+    <input class="input-ctt" placeholder="{{contato.email}}" type="email" [(ngModel)]="contato.email"/>
+    <br />
+    <input class="input-ctt" placeholder="{{contato.cargo}}" [(ngModel)]="contato.cargo"/>
+    <br />
+    <button class="SavePopup" (click)="editarContato()" type="submit">Salvar</button>
+    <button class="Delete" (click)="delete()" type="delete">Deletar</button>
+ </form>
+</div>
+
+</div>

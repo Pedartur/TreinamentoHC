@@ -1,7 +1,7 @@
 <div class="header">
   <h2>Contatos</h2>
 
-  <span class="badge">124 Contacts</span>
+  <span class="badge">{{ todosContatos.length }} Contacts</span>
 </div>
 
 <div class="pesquisa">
@@ -16,7 +16,9 @@
 <div class="contact-list">
   <div class="contact-card" *ngFor="let contato of contatosFiltrados">
     <div class="info">
-      <div class="avatar"></div>
+      <div class="avatar">
+        <mat-icon>account_circle</mat-icon>
+      </div>
       <div>
         <h3>{{ contato.nome }}</h3>
         <p>{{ contato.telefone }}</p>
@@ -26,7 +28,15 @@
 
     <div class="actions">
       <span class="tag">{{ contato.cargo }}</span>
-      <button mat-icon-button></button>
+      <a
+        mat-raised-button
+        (click)="abrirPopup(contato.id)"
+        title="Editar"
+        class="edit-btn"
+      >
+        <mat-icon>edit</mat-icon> 
+        Editar
+        </a>
       <a
         mat-raised-button
         [href]="'https://wa.me/' + contato.telefone"

@@ -46,6 +46,8 @@ export class Cadastro {
       next: (resultado) => {
         console.log('Salvo com sucesso!', resultado);
         alert('Contato cadastrado com sucesso!');
+
+        this.contatoService.notificarMudanca();
         
         this.limparFormulario();
       },
